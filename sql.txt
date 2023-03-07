@@ -1,0 +1,21 @@
+CREATE TABLE Posts(
+    ID int AUTO_INCREMENT PRIMARY KEY,
+    Content varchar(255) NOT NULL,
+    IdUser int,
+    ImageUrl varchar(255),
+    PRIMARY KEY (ID)
+);
+
+CREATE TABLE Likes(
+    IDPost int NOT NULL,
+    IdUser int NOT NULL,
+    IsLiked BOOLEAN,
+CONSTRAINT PK_LIKES PRIMARY KEY (IDPost,IdUser)
+);
+
+CREATE TABLE Comments( 
+   ID int AUTO_INCREMENT PRIMARY KEY,
+IdPost int NOT NULL,
+ Content varchar(255) NOT NULL,
+ IdUser int,
+ ImageUrl varchar(255) );
